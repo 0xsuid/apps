@@ -149,7 +149,9 @@ if __name__ == "__main__":
     import argparse
 
     parser = argparse.ArgumentParser(description="Language Modelling on Code")
-    parser.add_argument('--arch', default='gpt2', choices=transformers.GPT2_PRETRAINED_MODEL_ARCHIVE_LIST + ["EleutherAI/gpt-neo-2.7B"])
+    neo_models = ["EleutherAI/gpt-neo-2.7B", "EleutherAI/gpt-neo-125M"]
+    arch_list = transformers.GPT2_PRETRAINED_MODEL_ARCHIVE_LIST + neo_models
+    parser.add_argument('--arch', default='gpt2', choices=arch_list)
     parser.add_argument('--dummy-model', action='store_true')
     parser.add_argument('--load', default=None, type=str)
     parser.add_argument('--resume', default=None, type=str)

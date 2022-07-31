@@ -37,7 +37,7 @@ class APPSBaseDataset(torch.utils.data.Dataset):
         self.initialize()
 
         if ('EleutherAI' in mode or '2700' in mode):
-            self.tokenizer = transformers.GPT2Tokenizer.from_pretrained("EleutherAI/gpt-neo-2.7B")
+            self.tokenizer = transformers.GPT2Tokenizer.from_pretrained(mode)
         elif 'gpt' in self.mode: # Should handle GPT-2 and GPT-Neo
             self.tokenizer = transformers.GPT2Tokenizer.from_pretrained(mode)
         elif self.mode in {'codebert'}:
