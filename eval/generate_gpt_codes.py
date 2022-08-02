@@ -67,9 +67,9 @@ def generate_prompt(args, test_case_path, prompt_path, solutions_path, tokenizer
     with open(test_case_path, "r") as f:
         data = json.load(f)
     if not data.get("fn_name"):
-        _input += "\nUse Standard Input format"#\n"
+        _input += "\nUse Standard Input format\n"
     else:
-        _input += "\nUse Call-Based format"#\n"
+        _input += "\nUse Call-Based format\n"
     
     _input += "\nANSWER:\n"
 
