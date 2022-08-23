@@ -96,7 +96,8 @@ class APPSBaseDataset(torch.utils.data.Dataset):
                     else:
                         all_samples_dict[question_str] = [sample]
         
-        print(f"Loaded {len(all_samples)} saamples from {self.dataroot}.")
+        print(f"Note: No. of samples could be more then No. of problems because mostly one coding problem have multiple answers.")
+        print(f"Loaded {len(all_samples)} samples from {self.dataroot}.")
         print(f"Skipped {len(skipped_problems)} problems from {self.dataroot}.")
         self.samples = all_samples
         self.samples_dict = all_samples_dict
